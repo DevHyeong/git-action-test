@@ -1,0 +1,23 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Build the client Docker image
+      run: docker build -t devhyeong/docker-client ./client
+    
+    - name: Build the nginx docker image
+      run: docker build -t devhyeong/docker-nginx ./nginx
+    
+    - name: Build the server docker image
+      run: docker build -t devhyeong/docker-server ./server
