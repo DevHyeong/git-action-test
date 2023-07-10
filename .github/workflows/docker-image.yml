@@ -29,4 +29,6 @@ jobs:
         password: ${{ secrets.DOCKERHUB_TOKEN }}
     
     - name: push dockerhub 
-      run: docker push devhyeong/docker-client
+    - run: docker push devhyeong/docker-client
+    - run: docker push devhyeong/docker-nginx
+    - run: docker push devhyeong/docker-server
