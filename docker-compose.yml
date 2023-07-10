@@ -2,6 +2,7 @@ version: "3"
 services:
   client:
     build:
+      dockerfile: Dockerfile
       context: ./client
     volumes:
       - /app/node_modules
@@ -10,14 +11,18 @@ services:
   nginx:
     restart: always
     build:
+      dockerfile: Dockerfile
       context: ./nginx
-  server:
+    volumes:
+      - ./client/build:/usr/share/nginx/html
+    ports:
+      - "80:80"
+  backend:
     build:
+      dockerfile: Dockerfile
       context: ./server
-    container_name: app_server
+    container_name: app1_server
     volumes:
       - ./server:/app
-    command:
-      - ""
     ports:
       - "8080:8080"
