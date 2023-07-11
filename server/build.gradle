@@ -7,6 +7,11 @@ plugins {
 group = 'com.example'
 version = '0.0.1-SNAPSHOT'
 
+bootJar {
+	archiveFileName = 'app.jar'
+	mainClass = 'com.example.demo.DemoApplication'
+}
+
 java {
 	sourceCompatibility = '11'
 }

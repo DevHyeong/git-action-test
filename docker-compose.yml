@@ -21,7 +21,7 @@ services:
     build:
       dockerfile: Dockerfile
       context: ./server
-    container_name: app1_server
+    container_name: app_server
     volumes:
       - ./server:/app
     ports:
