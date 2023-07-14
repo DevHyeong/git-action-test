@@ -15,10 +15,7 @@ jobs:
     
     - name: Build the client Docker image
       run: docker build -t devhyeong/docker-client ./client
-    
-    - name: Build the nginx docker image
-      run: docker build -t devhyeong/docker-nginx ./nginx
- 
+     
     - name: Build the server docker image
       run: docker build -t devhyeong/docker-server ./server
     
@@ -31,5 +28,4 @@ jobs:
     - name: push dockerhub 
       run: |
         docker push devhyeong/docker-client
-        docker push devhyeong/docker-nginx
         docker push devhyeong/docker-server
