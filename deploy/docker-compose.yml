@@ -1,0 +1,6 @@
+version: "3"
+services:
+  client:
+    image: devhyeong/docker-client
+  server:
+    image: devhyeong/docker-server
