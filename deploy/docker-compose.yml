@@ -2,5 +2,10 @@ version: "3"
 services:
   client:
     image: devhyeong/docker-client
+    ports:
+      - "80:80"
+    restart: always
   server:
     image: devhyeong/docker-server
+    ports:
+      - "8080:8080"
