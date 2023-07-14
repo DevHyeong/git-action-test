@@ -5,18 +5,11 @@ services:
       dockerfile: Dockerfile
       context: ./client
     volumes:
-      - /app/node_modules
-      - ./client:/app
-    stdin_open: true
-  nginx:
-    restart: always
-    build:
-      dockerfile: Dockerfile
-      context: ./nginx
-    volumes:
-      - ./client/build:/usr/share/nginx/html
+      - /usr/src/app/node_modules
+      - ./client:/usr/src/app
     ports:
       - "80:80"
+    restart: always
   backend:
     build:
       dockerfile: Dockerfile
